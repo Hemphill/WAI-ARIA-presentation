@@ -1,411 +1,474 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+    <title>Web Accessibility Part 1, Semantic HTML</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-	<body>
+  <body>
 
-		<div class="reveal">
+    <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h2>Web Accessibility</h2>
+          <h3>Part 2</h3>
+          <h1>WAI-ARIA</h1>
+          <h2>Landmark Roles</h2>
+          <p>
+            <small>by Greg Hemphill &#9733; <a href="http://twitter.com/hemphill">@hemphill</a></small>
+          </p>
+        </section>
 
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
+        <section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
+          <h1>WAI</h1>
+          <p>
+            The <strong>W</strong>eb <strong>A</strong>ccessibility <strong>I</strong>nitiative of the W3C
+          </p>
+          <p>
+            <small>Strategies, guidelines, &amp; resources to make the Web accessible to people with disabilities</small>
+          </p>
+        </section>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
+        <section>
+          <h3>WAI Develops</h3>
+          <ul>
+            <li>guidelines widely regarded as the international standard for Web accessibility</li>
+            <li>support materials to help understand and implement Web accessibility</li>
+            <li>resources, through international collaboration</li>
+          </ul>
+        </section>
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
+        <section>
+          <h2>WAI Guidelines</h2>
+          <ul>
+            <li style="color: #ccc;">Authoring Tool Accessibility Guidelines (ATAG)</li>
+            <li style="color: #ccc;">User Agent Accessibility Guidelines (UAAG)</li>
+            <li style="color: #ccc;">Independent User Interface (Indie UI) - <em>closed</em></li>
+            <li style="color: #ccc;">Evaluation and Report Language (EARL)</li>
+            <li><strong>Web Content Accessibility Guidelines (WCAG)</strong></li>
+            <li><strong>Accessible Rich Internet Applications (WAI-ARIA)</strong></li>
+          </ul>
+        </section>
 
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
+        <section>
+          <h3>What's the difference?</h3>
+          <h2>WCAG</h2>
+          <p>
+            Tends to answer the question <strong>“What should we be doing?”</strong>
+          </p>
+          <h2>ARIA</h2>
+          <p>
+            Tends to answer the question <strong>“How do we accomplish it?”</strong>
+          </p>
+        </section>
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
+        <section>
+          <h1>WAI-ARIA</h1>
+          <p>
+            <strong>A</strong>ccessible <strong>R</strong>ich <strong>I</strong>nternet <strong>A</strong>pplications
+          </p>
+        </section>
 
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+        <section>
+          <h2>Navigation &amp; Context</h2>
+          <p>
+            ARIA is a gap-filler for HTML semantics. It is used when semantic elements in HTML fall short of providing contextual meaning.
+          </p>
+        </section>
 
-						```
-						<section data-markdown>
-						  ## Markdown support
+        <section>
+          <h1>Semantic 1st</h1>
+          <p>
+            It is preferred to find a semantic way to use HTML over ARIA elements, but ARIA is there when HTML falls short.
+          </p>
+        </section>
 
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
+        <section>
+          <h2>ARIA Provides</h2>
+          <ul>
+            <li><strong>Roles</strong> <br><small>for HTML elements through the <code>role</code> attribute</small></li>
+            <li><strong>States &amp; Properties</strong> <br><small> through <code>aria-</code> prefixed attributes</small></li>
+          </ul>
+        </section>
 
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+        <section>
+          <h1>Roles</h1>
+          <p>An ARIA pre-determined list of roles</p>
+          <p><code>role</code> attribute makes the element's context odvious to assistive technologies</p>
+          <p>Increases navigation, and other functionality for each role</p>
+        </section>
 
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
+        <section>
+          <h4>Example: Roles in a Bootstrap 3 Grid</h4>
+          <pre><code class="html">&lt;div role="grid"&gt;
+    &lt;div class="row" role="row"&gt;
+        &lt;div class="col-md-8" role="gridcell"&gt;
+          content here...
+        &lt;/div&gt;
+        &lt;div class="col-md-4" role="gridcell"&gt;
+          content here...
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </section>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
+        <section>
+          <h4>Example: Roles in a Bootstrap 3 Alert</h4>
+          <pre><code class="html">&lt;div class="alert alert-success" role="alert"&gt;
+  message goes here...
+&lt;/div&gt;</code></pre>
+        </section>
 
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
+        <section>
+          <h2>Landmark Roles</h2>
+          <p>Aid assisitive technology in navigating the page.</p>
+          <ul>
+            <li><code>application</code></li>
+            <li><code>banner</code></li>
+            <li><code>complementary</code></li>
+            <li><code>contentinfo</code></li>
+            <li><code>form</code></li>
+            <li><code>main</code></li>
+            <li><code>navigation</code></li>
+            <li><code>search</code></li>
+          </ul>
+        </section>
 
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
+        <section>
+          <p>Landmark Role</p>
+          <h1>application</h1>
+          <p><code class="html">role="application"</code></p>
+          <p>“A region declared as a web application, as opposed to a web document.”</p>
+        </section>
 
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
+        <section>
+          <h4>Be aware</h4>
+          <p>The main function of the application role is to allow your app to use custom shortcut keys.</p>
+        </section>
 
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
+        <section>
+          <h4>Use it sparingly</h4>
+          <p>If your page is only using the brower's default shorcuts, then avoid using the application role.</p>
+        </section>
 
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
+        <section>
+          <p>Landmark Role</p>
+          <h1>banner</h1>
+          <p><code class="html">role="banner"</code></p>
+          <p>“A region that contains mostly site-oriented content, rather than page-specific content.”</p>
+        </section>
 
-    var nodes = document.querySelectorAll( selector );
+        <section>
+          <h2>Think “header”</h2>
+          <p>“Site-oriented content typically includes things such as the logo or identity of the site sponsor, and site-specific search tool. A banner usually appears at the top of the page and typically spans the full width.”</p>
+        </section>
 
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
+        <section>
+          <h4>Example: Banner Landmark Role</h4>
+          <pre><code class="html">&lt;header role="banner"&gt;
+  &lt;img src="images/logo.png" alt="Webstop Logo"&gt;
+  &lt;p&gt;The Grocery Website Specialists&lt;/p&gt;
+&lt;/header&gt;</code></pre>
+        </section>
 
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
+        <section>
+          <p>Landmark Role</p>
+          <h1>complementary</h1>
+          <p><code class="html">role="complementary"</code></p>
+          <p>“A supporting section of the document, designed to be complementary to the main content at a similar level in the DOM hierarchy, but remains meaningful when separated from the main content.”</p>
+        </section>
 
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
+        <section>
+          <h4>Example: Complementary Landmark Role</h4>
+          <pre><code class="html">&lt;main role="main" class="weekly-ad"&gt;
+  &lt;h1&gt;Weekly Ad&lt;/h1&gt;
+  &lt;article&gt;Ad item 1&lt;/article&gt;
+  &lt;article&gt;Ad item 1&lt;/article&gt;
+&lt;/main&gt;
+&lt;aside role="complementary" class="shopping_list"&gt;
+  &lt;h1&gt;Weekly Ad&lt;/h1&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Shopping list item 1&lt;/li&gt;
+    &lt;li&gt;Shopping list item 2&lt;/li&gt;
+  &lt;ul&gt;
+&lt;/aside&gt;</code></pre>
+        </section>
 
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
+        <section>
+          <p>Landmark Role</p>
+          <h1>contentinfo</h1>
+          <p><code class="html">role="contentinfo"</code></p>
+          <p>“A large perceivable region that contains information about the parent document.”</p>
+        </section>
 
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
+        <section>
+          <h2>Think “footer”</h2>
+          <p>“Examples of information included in this region of the page are copyrights and links to privacy statements.”</p>
+        </section>
 
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
+        <section>
+          <h4>Example: ContentInfo Landmark Role</h4>
+          <pre><code class="html">&lt;footer role="contentinfo"&gt;
+  &lt;p&gt;&copy; 2016 Webstop.com, Inc. All Rights Reserved&lt;/p&gt;
+  &lt;p&gt;&lt;a href="docs/privacy"&gt;Privacy Policy&lt;/a&gt;&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+        </section>
 
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
+        <section>
+          <p>Landmark Role</p>
+          <h1>form</h1>
+          <p><code class="html">role="form"</code><br><code>&lt;form&gt;</code></p>
+          <p>“A landmark region that contains a collection of items and objects that, as a whole, combine to create a form.”</p>
+        </section>
 
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
+        <section>
+          <h2>Just use HTML <code>&lt;form&gt;</code> tags</h2>
+        </section>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
+        <section>
+          <p>Landmark Role</p>
+          <h1>main</h1>
+          <p><code class="html">role="main"</code><br><code>&lt;main&gt;</code></p>
+          <p>“The main content of a document.”</p>
+        </section>
 
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
+        <section>
+          <h2>The page “body”</h2>
+          <p>
+            “This marks the content that is directly related to or expands upon the central topic of the document.”
+          </p>
+        </section>
 
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
+        <section>
+          <h2>RIP “skip to main content” technique</h2>
+          <p>
+            “The main role is a non-obtrusive alternative for "skip to main content" links, where the navigation option to go to the main content.”
+          </p>
+        </section>
 
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
+        <section>
+          <h4>Example: Main Landmark Role</h4>
+          <pre><code class="html">&lt;main role="main" class="weekly-ad"&gt;
+  &lt;h1&gt;Weekly Ad&lt;/h1&gt;
+  &lt;article&gt;Ad item 1&lt;/article&gt;
+  &lt;article&gt;Ad item 1&lt;/article&gt;
+&lt;/main&gt;</code></pre>
+        </section>
 
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
+        <section>
+          <p>Landmark Role</p>
+          <h1>navigation</h1>
+          <p><code class="html">role="navigation"</code><br><code>&lt;nav&gt;</code></p>
+          <p>“A collection of navigational elements (usually links) for navigating the document or related documents.”</p>
+        </section>
 
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
+        <section>
+          <h4>Example: Main Landmark Role</h4>
+          <pre><code class="html">&lt;nav role="navigation" class="site-nav"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="/index"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/Recipes"&gt;Recipes&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+        </section>
 
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
+        <section>
+          <p>Landmark Role</p>
+          <h1>search</h1>
+          <p><code class="html">role="search"</code></p>
+          <p>“A landmark region that contains a collection of items and objects that, as a whole, combine to create a search facility.”</p>
+        </section>
 
-			</div>
+        <section>
+          <h4>Example: Search Landmark Role</h4>
+          <pre><code class="html">&lt;form role="search"&gt;
+  &lt;label for="site-search"&gt;Site Search&lt;/label&gt;
+  &lt;input type="search" name="site-search"&gt;
+  &lt;button type="submit"&gt;Search&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+        </section>
 
-		</div>
+<!-- 
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+Search This Site (search)
 
-		<script>
+The ARIA role "search" is used to define a region where search functionality is located. The role "search" is a specialized version of "form" so you do not need to label this section with the role of "form." Read the ARIA specification for the "search" role.
+Add the attribute role="search" to the encompassing <div>.
+Add the attribute aria-labelledby="searchLabel" to the encompassing <div> to explicitly say what the heading is for this section.
+In this situation, since the form has only one input element, an alternative implementation for indicating the heading is to set aria-labelledby="searchTermLabel" and not including the heading of "Search This Site" on the page at all.
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+ -->
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
 
-		</script>
+        <section>
+          <h2>Review Landmark Roles</h2>
+          <ul>
+            <li><code>application</code></li>
+            <li><code>banner</code></li>
+            <li><code>complementary</code></li>
+            <li><code>contentinfo</code></li>
+            <li><code>form</code></li>
+            <li><code>main</code></li>
+            <li><code>navigation</code></li>
+            <li><code>search</code></li>
+          </ul>
+        </section>
 
-	</body>
+        
+
+        <section>
+          <h4 style="margin: 0; padding: 0;">Example: All Landmark Roles</h4>
+          <pre><code class="html" style="height: 610px; max-height: 610px;">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Title of your page&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="description" content="description of your page"&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+
+    &lt;header role="banner"&gt;
+      &lt;h4&gt;Title of your web site&lt;/h4&gt;
+      &lt;nav role="navigation"&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="/index"&gt;Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="/recipes"&gt;Recipes&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="/contact"&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;form role="search"&gt;
+          &lt;input type="search" placeholder="Site Search"&gt;
+          &lt;button type="submit"&gt;Search&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main role="main"&gt;
+      &lt;h1&gt;Main content &amp; page title&lt;/h1&gt;
+      &lt;p&gt;Awesome content here&lt;/p&gt;
+    &lt;/main&gt;
+
+    &lt;aside role="complementary"&gt;
+      &lt;h2&gt;Sidebar&lt;/h2&gt;
+      &lt;p&gt;Complementary content&lt;/p&gt;
+    &lt;/aside&gt;
+
+    &lt;footer role="contentinfo"&gt;
+      &lt;h2&gt;Footer&lt;/h2&gt;
+      &lt;p&gt;Information about the site and page&lt;/p&gt;
+      &lt;p&gt;&copy; 2016 Webstop All Rights Reserved&lt;/p&gt;
+      &lt;p&gt;&lt;a href="/privacy"&gt;Privacy Policy&lt;/a&gt;&lt;/p&gt;
+    &lt;/footer&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <section>
+          <h1>Next Presentation</h1>
+          <h3>Part 3</h3>
+          <h2>Roles Beyond Landmark</h2>
+        </section>
+
+        <section>
+          <h2>Roles Categories:</h2>
+          <ol>
+            <li>Abstract Roles</li>
+            <li>Widget Roles
+</li>
+            <li>Document Structure Roles</li>
+            <li>Landmark Roles</li>
+          </ol>
+        </section>
+
+
+
+        <section>
+          <h1>Fin.</h1>
+          <p>
+            <small>by Greg Hemphill &#9733; <a href="http://twitter.com/hemphill">@hemphill</a></small>
+          </p>
+          <p>
+            <small>
+            for <a href="http://www.devlunch.us">.dev_lunch /&gt;</a>
+            <br><br><a href="http://www.devlunch.us">www.devlunch.us</a>
+            <br><a href="https://twitter.com/dev_lunch">@dev_lunch</a>
+          </small>
+          </p>
+        </section>
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
 </html>
